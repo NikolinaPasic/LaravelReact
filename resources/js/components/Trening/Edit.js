@@ -95,7 +95,7 @@ export default class Edit extends Component{
                            
                         </div>
                       
-                        <Button onClick={this.onSubmit} value="Izmeni" styleClass="btn-warning"/>
+                        <Button onClick={this.onSubmit} value="Izmeni" styleClass="btn-primary"/>
                     
                     </form>
                 </div>

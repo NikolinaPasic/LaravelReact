@@ -2,7 +2,7 @@ import { divide } from 'lodash';
 import React, {Component} from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
-
+import Button from 'react-bootstrap/Button';
 export default class Listing extends Component{
 
     constructor(){
@@ -21,11 +21,12 @@ export default class Listing extends Component{
     }
 
     onDelete(trening){
-        axios.delete('http://127.0.0.1:8000/treninzi/delete/'+trening_id)
+        console.log(trening);
+        axios.delete('http://127.0.0.1:8000/treninzi/delete/'+trening)
         .then(response=>{
             var treninzi= this.state.treninzi;
             for(var i=0; i<treninzi.length; i++){
-                if (treninzi[i].id == trening_id){
+                if (treninzi[i].id == trening){
                     treninzi.splice(i,1);
                     this.setState({treninzi:treninzi});
                 }
@@ -56,8 +57,8 @@ export default class Listing extends Component{
                                     <td >{trening.intenzitet}</td>
                                     <td >{trening.kapacitet}</td>
                                     <td >
-                                        <Link to={`/treninzi/edit/${trening.id}` }>Izmeni</Link>
-                                        <a href="#" onClick={this.onDelete.bind(this, trening.id)}>Obrisi</a>
+                                        <Link id="izmenibtn" to={`/treninzi/edit/${trening.id}` }>Izmeni</Link>
+                                        <a href="#" id="deletebtn" onClick={this.onDelete.bind(this, trening.id)}>Obrisi</a>
                                     </td>
                                 </tr>  
                                 

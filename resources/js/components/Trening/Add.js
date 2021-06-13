@@ -68,7 +68,8 @@ export default class Add extends Component{
                             
                        
                         </div>
-                        <Button onClick={this.onSubmit} value="Zakazi trening" styleClass="btn-primary"/>
+                        <Button onClick={this.onSubmit} value="Dodaj
+                         trening" styleClass="btn-primary"/>
                     
                     </form>
                 </div>
